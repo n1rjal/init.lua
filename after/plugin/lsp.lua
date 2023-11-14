@@ -43,7 +43,7 @@ lsp_zero.on_attach(function(client, bufnr)
     -- Show line diagnostics automatically in hover window
     vim.o.updatetime = 1000
     vim.cmd([[autocmd CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
-    -- vim.cmd([[autocmd CursorHold * lua vim.lsp.buf.hover(nil, {focus=false}))]])
+    vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 end)
 
 require("mason").setup({})

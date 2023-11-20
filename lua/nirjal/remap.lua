@@ -22,7 +22,7 @@ vim.keymap.set('n', '<leader>tt', "<cmd>:TagbarToggle<CR>")
 -- for nullls --
 
 vim.keymap.set({'v', 'n'}, '<leader>mp', function()
-    vim.lsp.buf.format();
+    vim.lsp.buf.formatting_sync(nil, 2000)
 end)
 
 

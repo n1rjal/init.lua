@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     };
 
-
+    use 'mfussenegger/nvim-dap';
 
     use "tpope/vim-fugitive";
 
@@ -34,10 +34,6 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4'
     }
-
-    use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
-        require('git-conflict').setup()
-    end }
 
     use {
         'moozd/aidoc.nvim',
@@ -50,7 +46,7 @@ return require('packer').startup(function(use)
         end,
     }
 
-
+    use "prettier/vim-prettier";
 
     use({
         'rose-pine/neovim',
@@ -60,7 +56,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use "MunifTanjim/prettier.nvim";
+
 
     use {
         'nvim-treesitter/nvim-treesitter',

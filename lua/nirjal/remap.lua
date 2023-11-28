@@ -25,7 +25,17 @@ vim.keymap.set({ 'v', 'n' }, '<leader>mp', function()
     vim.lsp.buf.format();
 end)
 
-vim.keymap.set('n', '<leader>gac', function()
+vim.keymap.set('n', '<leader>ac', function()
     local input = vim.fn.input("msg: ")
+    vim.cmd("G add .")
     vim.cmd("G commit -am \"" .. input .. "\"")
+end)
+
+
+vim.keymap.set('n', '<leader>acp', function()
+    local input = vim.fn.input("msg: ")
+    local current_branch = vim.fn.system("git branch --show-current")
+    vim.cmd("G add .")
+    vim.cmd("G commit -am \"" .. input .. "\"")
+    vim.cmd("G push origin " .. current_branch)
 end)

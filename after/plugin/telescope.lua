@@ -1,8 +1,15 @@
 local builtin = require('telescope.builtin')
 
--- leader ff to find_files hidden files are allowed
--- leader gf to git_files
+-- The code is setting up key mappings in Vim for
+-- various Telescope commands.
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
+vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, {})
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', 'bf', builtin.buffers, {})
+vim.keymap.set('n', '<leader>rr', builtin.registers, {})
+
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})

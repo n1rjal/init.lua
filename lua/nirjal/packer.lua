@@ -57,6 +57,11 @@ return require('packer').startup(function(use)
     })
 
 
+    use {
+        "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }
+    }
+    use "theHamsta/nvim-dap-virtual-text";
+    require('dapui').setup()
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -89,6 +94,5 @@ return require('packer').startup(function(use)
     }
 
     use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-    use 'lewis6991/gitsigns.nvim'   -- OPTIONAL: for git status
-    use 'romgrk/barbar.nvim'
+    use 'lewis6991/gitsigns.nvim'     -- OPTIONAL: for git status
 end)

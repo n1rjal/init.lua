@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use "prettier/vim-prettier";
+    use { 'mhartington/formatter.nvim' }
 
     use({
         'rose-pine/neovim',

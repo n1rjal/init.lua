@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader>acp", function()
 	vim.cmd('G commit -am "' .. input .. '"')
 	vim.cmd("G push origin " .. current_branch)
 end)
+
+vim.keymap.set("n", "[c", function()
+	require("treesitter-context").go_to_context()
+end, { silent = true })

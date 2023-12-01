@@ -41,6 +41,19 @@ require("formatter").setup({
 		-- Formatter configurations for typescript and javascript json file goes here
 		-- uses prettier and eslint_d must search config file and use it from local
 		-- direcotry of pwd
+
+		json = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.api.nvim_buf_get_name(0),
+					},
+					stdin = true,
+				}
+			end,
+		},
 		typescript = {
 			function()
 				return {

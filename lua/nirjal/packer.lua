@@ -6,7 +6,6 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
-	use("nvim-tree/nvim-tree.lua")
 	use("preservim/tagbar")
 
 	use("nvim-treesitter/nvim-treesitter-context")
@@ -93,6 +92,9 @@ return require("packer").startup(function(use)
 			{ "L3MON4D3/LuaSnip" },
 		},
 	})
+
+	use("nvim-lua/plenary.nvim")
+	use("ThePrimeagen/harpoon")
 
 	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icons
 	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status

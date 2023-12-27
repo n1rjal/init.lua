@@ -25,7 +25,28 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
-	use("mfussenegger/nvim-dap")
+	-- for debugging python application
+	use("mfussenegger/nvim-dap", {
+		requires = { "rcarriga/nvim-dap-ui" },
+		opts = {
+			ft = "python",
+		},
+	})
+
+	use({
+		"mfussenegger/nvim-dap-python",
+		ft = "python",
+		dependencies = { "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui" },
+	})
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+	})
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+	})
+	use("theHamsta/nvim-dap-virtual-text")
 
 	use("tpope/vim-fugitive")
 
@@ -58,22 +79,21 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
-	})
-	use("theHamsta/nvim-dap-virtual-text")
-	require("dapui").setup()
-
-	use({
 		"nvim-treesitter/nvim-treesitter",
 		{ run = ":TSUpdate" },
 	})
 
 	use("nvim-treesitter/playground")
-	use("nvim-lua/plenary.nvim")
 
 	use({
 		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"black",
+				"debugpy",
+				"js-debug-adapter",
+			},
+		},
 	})
 
 	use({

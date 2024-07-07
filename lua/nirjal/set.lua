@@ -39,5 +39,5 @@ vim.cmd([[
     let g:user_emmet_leader_key = ','
 ]])
 
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }

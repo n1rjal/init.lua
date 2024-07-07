@@ -91,9 +91,11 @@ return require("packer").startup(function(use)
 				"black",
 				"debugpy",
 				"js-debug-adapter",
+
+				-- for spellings
 				"codespell",
 				"misspell",
-				"cspell",
+				"csspell",
 			},
 		},
 	})

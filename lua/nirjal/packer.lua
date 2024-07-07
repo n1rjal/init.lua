@@ -1,31 +1,39 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
+--
 -- Only required if you have packer configured as `opt`
+--
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+
+	use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/tagbar")
 
 	use("nvim-treesitter/nvim-treesitter-context")
-	use({
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				-- config
-			})
-		end,
-		requires = { "nvim-tree/nvim-web-devicons" },
-	})
+
+	use("mg979/vim-visual-multi")
 
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
-	-- for debugging python application
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "onsails/lspkind.nvim" })
+
+	use("mattn/emmet-vim")
+
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!:).
+		run = "make install_jsregexp",
+	})
+
+	-- for debugging  application
 	use("mfussenegger/nvim-dap", {
 		requires = { "rcarriga/nvim-dap-ui" },
 		opts = {
@@ -33,19 +41,13 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use({
-		"mfussenegger/nvim-dap-python",
-		ft = "python",
-		dependencies = { "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui" },
-	})
+	use("mfussenegger/nvim-dap-python")
+
 	use({
 		"rcarriga/nvim-dap-ui",
 		requires = { "mfussenegger/nvim-dap" },
 	})
-	use({
-		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
-	})
+
 	use("theHamsta/nvim-dap-virtual-text")
 
 	use("tpope/vim-fugitive")
@@ -78,10 +80,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		{ run = ":TSUpdate" },
-	})
+	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
 
 	use("nvim-treesitter/playground")
 
@@ -92,6 +91,9 @@ return require("packer").startup(function(use)
 				"black",
 				"debugpy",
 				"js-debug-adapter",
+				"codespell",
+				"misspell",
+				"cspell",
 			},
 		},
 	})

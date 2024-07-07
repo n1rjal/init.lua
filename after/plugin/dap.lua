@@ -1,6 +1,6 @@
-local dappy = require("dap-python")
 local dap = require("dap")
 local dapui = require("dapui")
+local dappy = require("dap-python")
 
 require("nvim-dap-virtual-text").setup()
 
@@ -61,7 +61,7 @@ table.insert(dap.configurations.python, {
 		elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
 			return cwd .. "/.venv/bin/python"
 		else
-			return "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
+			return path
 		end
 	end,
 })

@@ -2,8 +2,7 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "manual"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -35,5 +34,10 @@ vim.opt.colorcolumn = "90"
 
 vim.opt.completeopt = "menuone,noselect"
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- Set user emmet leader key to <Ctrl+Tab>
+vim.cmd([[
+    let g:user_emmet_leader_key = ','
+]])
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }

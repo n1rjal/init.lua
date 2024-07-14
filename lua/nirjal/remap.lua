@@ -6,6 +6,9 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader>q", "<cmd>BufferWipeout<CR>")
 vim.keymap.set("n", "<leader>W", "<cmd>BufferRestore<CR>")
 
+-- for lsp --
+vim.keymap.set("n", "<leader>lr", "<cmd>:LspRestart<CR>")
+
 -- for tagbar --
 vim.keymap.set("n", "<leader>tt", "<cmd>:TagbarToggle<CR>")
 
@@ -18,12 +21,4 @@ vim.keymap.set("n", "<leader>ac", function()
 	local input = vim.fn.input("msg: ")
 	vim.cmd("G add .")
 	vim.cmd('G commit -am "' .. input .. '"')
-end)
-
-vim.keymap.set("n", "<leader>acp", function()
-	local input = vim.fn.input("msg: ")
-	local current_branch = vim.fn.system("git branch --show-current")
-	vim.cmd("G add .")
-	vim.cmd('G commit -am "' .. input .. '"')
-	vim.cmd("G push origin " .. current_branch)
 end)

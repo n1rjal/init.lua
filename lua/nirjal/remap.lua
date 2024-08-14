@@ -24,4 +24,4 @@ vim.keymap.set("n", "<leader>ac", function()
 end)
 
 -- for fugitive --
-vim.keymap.set("n", "<leader>xa", "<cmd>:Git<CR>")
+vim.keymap.set("n", "<leader>xx", "<cmd>:Git<CR>")

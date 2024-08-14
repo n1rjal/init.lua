@@ -112,8 +112,16 @@ return require("packer").startup(function(use)
 			{ "neovim/nvim-lspconfig" },
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
+			{ "davidsierradz/cmp-conventionalcommits" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "L3MON4D3/LuaSnip" },
+		},
+	})
+
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"davidsierradz/cmp-conventionalcommits",
 		},
 	})
 

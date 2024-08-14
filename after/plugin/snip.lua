@@ -89,6 +89,52 @@ ls.add_snippets("python", {
 	),
 })
 
+ls.add_snippets("gitcommit", {
+	ls.parser.parse_snippet(
+		{ trig = "feat", name = "feature commit", wordTrig = true },
+		"feat(${1:scope}): ${2:description}"
+	),
+	ls.parser.parse_snippet(
+		{ trig = "feat", name = "feature commit", wordTrig = true },
+		"feat(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "fix", name = "bug fix commit", wordTrig = true },
+		"fix(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "chore", name = "chore commit", wordTrig = true },
+		"chore(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "test", name = "test commit", wordTrig = true },
+		"test(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "refactor", name = "refactor commit", wordTrig = true },
+		"refactor(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "docs", name = "documentation commit", wordTrig = true },
+		"docs(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "style", name = "style commit", wordTrig = true },
+		"style(${1:scope}): ${2:description}"
+	),
+
+	ls.parser.parse_snippet(
+		{ trig = "perf", name = "performance commit", wordTrig = true },
+		"perf(${1:scope}): ${2:description}"
+	),
+})
+
 ls.add_snippets("javascript", {
 	s("console.log", {
 		t("console.log('Hello, '"),

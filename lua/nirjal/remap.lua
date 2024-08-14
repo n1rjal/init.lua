@@ -25,4 +25,3 @@ end)
 
 -- for fugitive --
 vim.keymap.set("n", "<leader>gg", "<cmd>:Git<CR>")
-vim.keymap.set("n", "<leader>pp", "<cmd>:Git push<CR>")

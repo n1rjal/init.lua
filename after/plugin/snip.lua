@@ -89,7 +89,7 @@ ls.add_snippets("python", {
 	),
 })
 
-ls.add_snippets("gitcommit", {
+--[[ ls.add_snippets("gitcommit", {
 	ls.parser.parse_snippet(
 		{ trig = "feat", name = "feature commit", wordTrig = true },
 		"feat(${1:scope}): ${2:description}"
@@ -133,7 +133,7 @@ ls.add_snippets("gitcommit", {
 		{ trig = "perf", name = "performance commit", wordTrig = true },
 		"perf(${1:scope}): ${2:description}"
 	),
-})
+}) ]]
 
 ls.add_snippets("javascript", {
 	s("console.log", {

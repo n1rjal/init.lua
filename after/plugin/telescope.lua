@@ -46,6 +46,8 @@ vim.keymap.set("n", "<leader>ps", function()
 				"-g",
 				"!*.out", -- Exclude compiled output files
 				"--ignore-case", -- Case insensitive search
+				"-g",
+				"!.venv/*",
 			}
 		end,
 	})

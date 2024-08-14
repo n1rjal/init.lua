@@ -138,53 +138,38 @@ require("formatter").setup({
 			end,
 		},
 
-        typescriptreact = {
-            function()
-                return {
-                    exe = "eslint_d",
-                    args = {
-                        "--stdin",
-                        "--stdin-filename",
-                        vim.api.nvim_buf_get_name(0),
-                        "--fix-to-stdout",
-                        "--ignore-path",
-                        ".gitignore",
-                    },
-                    stdin = true,
-                }
-            end,
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-
-		python = {
+		typescriptreact = {
 			function()
 				return {
-					exe = "black",
+					exe = "eslint_d",
 					args = {
-						"--quiet",
-						"-",
+						"--stdin",
+						"--stdin-filename",
+						vim.api.nvim_buf_get_name(0),
+						"--fix-to-stdout",
+						"--ignore-path",
+						".gitignore",
+					},
+					stdin = true,
+				}
+			end,
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.api.nvim_buf_get_name(0),
 					},
 					stdin = true,
 				}
 			end,
 		},
 
-		php = {
+		python = {
 			function()
 				return {
-					exe = "php-cs-fixer",
+					exe = "black",
 					args = {
-						"fix",
-						"--using-cache=no",
 						"--quiet",
 						"-",
 					},

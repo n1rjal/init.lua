@@ -22,3 +22,6 @@ vim.keymap.set("n", "<leader>ac", function()
 	vim.cmd("G add .")
 	vim.cmd('G commit -am "' .. input .. '"')
 end)
+
+-- for fugitive --
+vim.keymap.set("n", "<leader>xa", "<cmd>:Git<CR>")

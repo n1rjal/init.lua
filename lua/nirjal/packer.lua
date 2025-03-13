@@ -59,17 +59,6 @@ return require("packer").startup(function(use)
 		tag = "0.1.4",
 	})
 
-	use({
-		"moozd/aidoc.nvim",
-		config = function()
-			require("aidoc").setup({
-				email = "nirjalpaudel54312@gmail.com",
-				width = 50,
-				keymap = "<leader>m",
-			})
-		end,
-	})
-
 	use({ "mhartington/formatter.nvim" })
 
 	use({
@@ -115,13 +104,6 @@ return require("packer").startup(function(use)
 			{ "davidsierradz/cmp-conventionalcommits" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "L3MON4D3/LuaSnip" },
-		},
-	})
-
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"davidsierradz/cmp-conventionalcommits",
 		},
 	})
 

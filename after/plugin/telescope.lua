@@ -1,5 +1,15 @@
 local builtin = require("telescope.builtin")
 require("telescope").load_extension("harpoon")
+require("telescope").setup({
+	defaults = {
+		prompt_prefix = "🔍 ",
+		sorting_strategy = "ascending",
+		layout_config = { prompt_position = "top" },
+		file_ignore_patterns = { "node_modules", "%.lock" },
+		winblend = 10,
+		hl_result_eol = true, -- Ensure highlighting works
+	},
+})
 
 -- The code is setting up key mappings in Vim for
 -- various Telescope commands.

@@ -1,4 +1,4 @@
-local dap = require("dap")
+--[[ local dap = require("dap")
 local dapui = require("dapui")
 local dappy = require("dap-python")
 
@@ -101,4 +101,4 @@ vim.api.nvim_set_keymap("n", "<leader>dn", '<cmd>lua require"dap".step_over()<CR
 vim.api.nvim_set_keymap("n", "<leader>di", '<cmd>lua require"dap".step_into()<CR>', { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>do", '<cmd>lua require"dap".step_out()<CR>', { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dl", '<cmd>lua require"dap".run_last()<CR>', { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>dui", '<cmd>lua require"dapui".toggle()<CR>', { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dui", '<cmd>lua require"dapui".toggle()<CR>', { noremap = true }) ]]

@@ -57,24 +57,10 @@ require("formatter").setup({
 		javascript = {
 			function()
 				return {
-					exe = "eslint_d",
-					args = {
-						"--stdin",
-						"--stdin-filename",
-						vim.api.nvim_buf_get_name(0),
-						"--fix-to-stdout",
-						"--ignore-path",
-						".gitignore",
-					},
-					stdin = true,
-				}
-			end,
-			function()
-				return {
-					exe = "prettier",
+					exe = "biome",
 					args = {
 						"--stdin-filepath",
-						vim.api.nvim_buf_get_name(0),
+						'"vim.api.nvim_buf_get_name(0)"',
 					},
 					stdin = true,
 				}
@@ -82,20 +68,6 @@ require("formatter").setup({
 		},
 
 		typescript = {
-			function()
-				return {
-					exe = "eslint_d",
-					args = {
-						"--stdin",
-						"--stdin-filename",
-						vim.api.nvim_buf_get_name(0),
-						"--fix-to-stdout",
-						"--ignore-path",
-						".gitignore",
-					},
-					stdin = true,
-				}
-			end,
 			function()
 				return {
 					exe = "prettier",

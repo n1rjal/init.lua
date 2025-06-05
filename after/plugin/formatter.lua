@@ -142,6 +142,8 @@ require("formatter").setup({
 				return {
 					exe = "black",
 					args = {
+						"--line-length",
+						"99",
 						"--quiet",
 						"-",
 					},

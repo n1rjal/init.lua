@@ -8,17 +8,32 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	use({
+		"moozd/aidoc.nvim",
+		config = function()
+			require("aidoc").setup({
+				email = "nirjalpaudel54312@gmail.com",
+				width = 65,
+				keymap = "<leader>mp",
+			})
+		end,
+	})
+
+	use({
+		"olimorris/onedarkpro.nvim", -- for Obsidian
+		name = "onedarkpro",
+	})
+	use({
+		"mcchrish/zenbones.nvim", -- includes seoulbones
+		dependencies = { "rktjmp/lush.nvim" },
+	})
+
 	use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/tagbar")
 
 	use("nvim-treesitter/nvim-treesitter-context")
 
 	use("mg979/vim-visual-multi")
-
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	})
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "onsails/lspkind.nvim" })
@@ -109,7 +124,4 @@ return require("packer").startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 	use("ThePrimeagen/harpoon")
-
-	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icons
-	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
 end)

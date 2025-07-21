@@ -40,7 +40,7 @@ require("formatter").setup({
 		},
 		-- Formatter configurations for typescript and javascript json file goes here
 		-- uses prettier and eslint_d must search config file and use it from local
-		-- direcotry of pwd
+		-- directory of pwd
 
 		json = {
 			function()
@@ -48,7 +48,7 @@ require("formatter").setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 					},
 					stdin = true,
 				}
@@ -60,7 +60,7 @@ require("formatter").setup({
 					exe = "biome",
 					args = {
 						"--stdin-filepath",
-						'"vim.api.nvim_buf_get_name(0)"',
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 					},
 					stdin = true,
 				}
@@ -73,14 +73,14 @@ require("formatter").setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 					},
 					stdin = true,
 				}
 			end,
 		},
 
-		--fromat typescript react and react javascript
+		-- format typescript react and react javascript
 		-- uses eslint_d and prettier
 		--
 		javascriptreact = {
@@ -90,7 +90,7 @@ require("formatter").setup({
 					args = {
 						"--stdin",
 						"--stdin-filename",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 						"--fix-to-stdout",
 						"--ignore-path",
 						".gitignore",
@@ -103,7 +103,7 @@ require("formatter").setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 					},
 					stdin = true,
 				}
@@ -117,7 +117,7 @@ require("formatter").setup({
 					args = {
 						"--stdin",
 						"--stdin-filename",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 						"--fix-to-stdout",
 						"--ignore-path",
 						".gitignore",
@@ -130,7 +130,7 @@ require("formatter").setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath",
-						vim.api.nvim_buf_get_name(0),
+						util.escape_path(vim.api.nvim_buf_get_name(0)),
 					},
 					stdin = true,
 				}
@@ -142,8 +142,6 @@ require("formatter").setup({
 				return {
 					exe = "black",
 					args = {
-						"--line-length",
-						"99",
 						"--quiet",
 						"-",
 					},

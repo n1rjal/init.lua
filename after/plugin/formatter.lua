@@ -57,7 +57,7 @@ require("formatter").setup({
 		javascript = {
 			function()
 				return {
-					exe = "biome",
+					exe = "prettier",
 					args = {
 						"--stdin-filepath",
 						util.escape_path(vim.api.nvim_buf_get_name(0)),
@@ -86,20 +86,6 @@ require("formatter").setup({
 		javascriptreact = {
 			function()
 				return {
-					exe = "eslint_d",
-					args = {
-						"--stdin",
-						"--stdin-filename",
-						util.escape_path(vim.api.nvim_buf_get_name(0)),
-						"--fix-to-stdout",
-						"--ignore-path",
-						".gitignore",
-					},
-					stdin = true,
-				}
-			end,
-			function()
-				return {
 					exe = "prettier",
 					args = {
 						"--stdin-filepath",
@@ -111,20 +97,6 @@ require("formatter").setup({
 		},
 
 		typescriptreact = {
-			function()
-				return {
-					exe = "eslint_d",
-					args = {
-						"--stdin",
-						"--stdin-filename",
-						util.escape_path(vim.api.nvim_buf_get_name(0)),
-						"--fix-to-stdout",
-						"--ignore-path",
-						".gitignore",
-					},
-					stdin = true,
-				}
-			end,
 			function()
 				return {
 					exe = "prettier",

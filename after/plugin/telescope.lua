@@ -12,6 +12,12 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>rr", builtin.registers, {})
 vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>bf", builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>fw", builtin.grep_string, {}) -- Find Word under cursor
+vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, {}) -- Document Symbols (Outline)
+vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, {}) -- Workspace Symbols (Project-wide classes)
+vim.keymap.set("n", "<leader>sx", builtin.resume, {}) -- Resume last search
 
 vim.keymap.set("n", "<leader>ps", function()
 	builtin.live_grep({

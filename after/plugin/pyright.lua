@@ -1,13 +1,26 @@
-require("lspconfig").pyright.setup({
+vim.lsp.config("pyright", {
+	cmd = { "pyright-langserver", "--stdio" },
+	filetypes = { "python" },
+	root_markers = { "pyproject.toml", "setup.py", ".git" },
 	settings = {
 		python = {
 			analysis = {
-				typeCheckingMode = "basic", -- Options are off, basic, or strict.
+				typeCheckingMode = "basic",
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
-				autoImportCompletions = true,
-				diagnosticModes = "openFilesOnly", -- Options are workspace or openFilesOnly.
+				preferGoToSourceDefinition = true,
+
+				-- reduces django noise
+				reportAssignmentType = "warning",
+				reportOptionalMemberAccess = "none",
+				reportOptionalCall = "none",
+				reportOptionalSubscript = "none",
+				reportOptionalMemberAccess = "none",
+				reportAssignmentType = "warning",
+				reportGeneralTypeIssues = "warning",
 			},
 		},
 	},
 })
+
+vim.lsp.enable("pyright")

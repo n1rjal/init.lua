@@ -1,4 +1,12 @@
 local builtin = require("telescope.builtin")
+
+require("telescope").setup({
+	defaults = {
+		path_display = { "truncate" },
+	},
+})
+
+local builtin = require("telescope.builtin")
 require("telescope").load_extension("harpoon")
 
 -- The code is setting up key mappings in Vim for

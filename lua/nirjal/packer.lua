@@ -31,8 +31,6 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/tagbar")
 
-	use("nvim-treesitter/nvim-treesitter-context")
-
 	use("mg979/vim-visual-multi")
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
@@ -69,9 +67,11 @@ return require("packer").startup(function(use)
 
 	-- for commentary
 	use("b3nj5m1n/kommentary")
+
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
+		tag = "0.1.8",
+		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
 	use({ "mhartington/formatter.nvim" })
@@ -84,9 +84,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
-
-	use("nvim-treesitter/playground")
+	-- Pinned to the master branch: the new default `main` branch removed the
+	-- `nvim-treesitter.configs` module and requires Neovim 0.11+.
+	use({ "nvim-treesitter/nvim-treesitter", branch = "master", run = ":TSUpdate" })
 
 	use({
 		"williamboman/mason.nvim",
@@ -110,10 +110,13 @@ return require("packer").startup(function(use)
 		requires = {
 			--- Uncomment these if you want to manage LSP servers from neovim
 			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			-- Pinned to v1.x: mason-lspconfig v2 (main) requires Neovim 0.11+
+			-- (calls vim.lsp.enable) and changes the lsp-zero handler API.
+			{ "williamboman/mason-lspconfig.nvim", tag = "v1.32.0" },
 
 			-- LSP Support
-			{ "neovim/nvim-lspconfig" },
+			-- Pinned to v1.8.0: nvim-lspconfig v2.x (master) dropped Neovim 0.10.
+			{ "neovim/nvim-lspconfig", tag = "v1.8.0" },
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
 			{ "davidsierradz/cmp-conventionalcommits" },
